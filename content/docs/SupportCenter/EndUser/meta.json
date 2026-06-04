@@ -1,0 +1,11 @@
+{
+  "title": "End User",
+  "pages": [
+    "hems-controller",
+    "app-general",
+    "prices",
+    "energy-device",
+    "automatic-strategy",
+    "usage-analysis"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "FAQ",
+  "root": true,
+  "pages": [
+    "hems-controller",
+    "prices",
+    "energy-device",
+    "automatic-strategy",
+    "usage-analysis",
+    "general"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Solar&Battery",
+  "pages": [
+    "[GONEO](/docs/SupportCenter/Installer/solar-battery/GONEO_Inverter_Setup_ModbusRTU)",
+    "[Kostal](/docs/SupportCenter/Installer/solar-battery/Kostal_Inverter_Setup_ModbusTCP)"
+  ]
+}

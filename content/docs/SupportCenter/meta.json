@@ -1,0 +1,8 @@
+{
+  "title": "Support center",
+  "root": true,
+  "pages": [
+    "EndUser",
+    "Installer"
+  ]
+}

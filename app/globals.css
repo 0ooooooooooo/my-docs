@@ -1,26 +1,120 @@
 @import "tailwindcss";
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fd-layout-width: 97%;
+  --fd-sidebar-width: 272px;
+  --fd-toc-width: 272px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), 'Segoe UI', sans-serif;
+}
+
+#nd-sidebar {
+  /* background: #f3f4f6;
+  border-right-color: #d7dbe1; */
+}
+
+#nd-sidebar [data-active='true'] {
+  font-weight: 600;
+}
+
+#nd-page {
+  max-width: 1100px;
+  /* background: #ffffff; */
+  /* border: 1px solid #e2e6ec; */
+  /* border-radius: 14px; */
+  /* box-shadow: 0 10px 28px rgba(14, 24, 46, 0.04); */
+}
+
+
+/* 
+#nd-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #d8dee7;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#nd-page table th,
+#nd-page table td {
+  border-color: #dde3ec;
+  vertical-align: top;
+}
+
+#nd-page table thead th {
+  background: #f2f4f7;
+  color: #253143;
+  font-weight: 700;
+}
+
+#nd-page .note-box {
+  background: #f8fafc;
+  border: 1px solid #dde4ed;
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+#nd-toc {
+  border-left: 1px solid #e2e6ec;
+  background: linear-gradient(180deg, #f7f8fb 0%, rgba(247, 248, 251, 0) 72%);
+}
+
+#nd-toc #toc-title {
+  font-weight: 600;
+} */
+
+/* Remove border on the sidebar footer container that wraps icon links/theme switch */
+#nd-sidebar div:has(> [data-theme-toggle]) {
+  border: 0;
+  background: transparent;
+}
+
+.sidebar-theme-switch[data-theme-toggle] {
+/* border: 1px solid #d8dee8; */
+/* background: #f5f7fb; */
+border-radius: 999px;
+padding: 2px;
+margin-left: auto;
+}
+
+.sidebar-theme-switch[data-theme-toggle] > * {
+width: 28px;
+height: 28px;
+border-radius: 999px;
+color: #6b7483;
+transition: all 0.2s ease;
+}
+
+.sidebar-theme-switch[data-theme-toggle] > .bg-fd-accent {
+background: #1f2937;
+color: #ffffff;
+}
+
+.dark .sidebar-theme-switch[data-theme-toggle] {
+border-color: #3a4352;
+background: #1a2230;
+}
+
+.dark .sidebar-theme-switch[data-theme-toggle] > * {
+color: #9ea8ba;
+}
+
+.dark .sidebar-theme-switch[data-theme-toggle] > .bg-fd-accent {
+background: #f3f4f6;
+color: #111827;
 }

@@ -1,0 +1,11 @@
+{
+  "title": "Compatible list",
+  "root": true,
+  "pages": [
+    "solar-battery",
+    "heat-pump",
+    "ev-charger",
+    "smart-home",
+    "vehicle"
+  ]
+}

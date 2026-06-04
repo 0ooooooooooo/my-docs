@@ -1,0 +1,22 @@
+// @ts-nocheck
+import { browser } from 'fumadocs-mdx/runtime/browser';
+import type * as Config from '../source.config';
+
+const create = browser<typeof Config, import("fumadocs-mdx/runtime/types").InternalTypeConfig & {
+  DocData: {
+  }
+} & {
+  DocData: {
+    docs: {
+      /**
+       * Last modified date of document file, obtained from version control.
+       *
+       */
+      lastModified?: Date;
+    },
+  }
+}>();
+const browserCollections = {
+  docs: create.doc("docs", {"CompatibleList/ev-charger.mdx": () => import("../content/docs/CompatibleList/ev-charger.mdx?collection=docs"), "CompatibleList/heat-pump.mdx": () => import("../content/docs/CompatibleList/heat-pump.mdx?collection=docs"), "CompatibleList/index.mdx": () => import("../content/docs/CompatibleList/index.mdx?collection=docs"), "CompatibleList/smart-home.mdx": () => import("../content/docs/CompatibleList/smart-home.mdx?collection=docs"), "CompatibleList/solar-battery.mdx": () => import("../content/docs/CompatibleList/solar-battery.mdx?collection=docs"), "CompatibleList/vehicle.mdx": () => import("../content/docs/CompatibleList/vehicle.mdx?collection=docs"), "SupportCenter/index.mdx": () => import("../content/docs/SupportCenter/index.mdx?collection=docs"), "FAQ/automatic-strategy.mdx": () => import("../content/docs/FAQ/automatic-strategy.mdx?collection=docs"), "FAQ/energy-device.mdx": () => import("../content/docs/FAQ/energy-device.mdx?collection=docs"), "FAQ/general.mdx": () => import("../content/docs/FAQ/general.mdx?collection=docs"), "FAQ/hems-controller.mdx": () => import("../content/docs/FAQ/hems-controller.mdx?collection=docs"), "FAQ/prices.mdx": () => import("../content/docs/FAQ/prices.mdx?collection=docs"), "FAQ/smart-home.mdx": () => import("../content/docs/FAQ/smart-home.mdx?collection=docs"), "FAQ/usage-analysis.mdx": () => import("../content/docs/FAQ/usage-analysis.mdx?collection=docs"), "SupportCenter/EndUser/automatic-strategy.mdx": () => import("../content/docs/SupportCenter/EndUser/automatic-strategy.mdx?collection=docs"), "SupportCenter/EndUser/energy-device.mdx": () => import("../content/docs/SupportCenter/EndUser/energy-device.mdx?collection=docs"), "SupportCenter/EndUser/hems-controller.mdx": () => import("../content/docs/SupportCenter/EndUser/hems-controller.mdx?collection=docs"), "SupportCenter/EndUser/index.mdx": () => import("../content/docs/SupportCenter/EndUser/index.mdx?collection=docs"), "SupportCenter/EndUser/prices.mdx": () => import("../content/docs/SupportCenter/EndUser/prices.mdx?collection=docs"), "SupportCenter/EndUser/usage-analysis.mdx": () => import("../content/docs/SupportCenter/EndUser/usage-analysis.mdx?collection=docs"), "SupportCenter/Installer/ev-charger.mdx": () => import("../content/docs/SupportCenter/Installer/ev-charger.mdx?collection=docs"), "SupportCenter/Installer/heat-pump.mdx": () => import("../content/docs/SupportCenter/Installer/heat-pump.mdx?collection=docs"), "SupportCenter/Installer/hems-controller.mdx": () => import("../content/docs/SupportCenter/Installer/hems-controller.mdx?collection=docs"), "SupportCenter/Installer/index.mdx": () => import("../content/docs/SupportCenter/Installer/index.mdx?collection=docs"), "SupportCenter/Installer/smart-home.mdx": () => import("../content/docs/SupportCenter/Installer/smart-home.mdx?collection=docs"), "SupportCenter/Installer/smart-meter.mdx": () => import("../content/docs/SupportCenter/Installer/smart-meter.mdx?collection=docs"), "SupportCenter/Installer/solar-battery.mdx": () => import("../content/docs/SupportCenter/Installer/solar-battery.mdx?collection=docs"), "SupportCenter/EndUser/app-general/BEXIE.mdx": () => import("../content/docs/SupportCenter/EndUser/app-general/BEXIE.mdx?collection=docs"), "SupportCenter/EndUser/app-general/index.mdx": () => import("../content/docs/SupportCenter/EndUser/app-general/index.mdx?collection=docs"), "SupportCenter/Installer/solar-battery/GONEO_Inverter_Setup_ModbusRTU.mdx": () => import("../content/docs/SupportCenter/Installer/solar-battery/GONEO_Inverter_Setup_ModbusRTU.mdx?collection=docs"), "SupportCenter/Installer/solar-battery/index.mdx": () => import("../content/docs/SupportCenter/Installer/solar-battery/index.mdx?collection=docs"), "SupportCenter/Installer/solar-battery/Kostal_Inverter_Setup_ModbusTCP.mdx": () => import("../content/docs/SupportCenter/Installer/solar-battery/Kostal_Inverter_Setup_ModbusTCP.mdx?collection=docs"), }),
+};
+export default browserCollections;
