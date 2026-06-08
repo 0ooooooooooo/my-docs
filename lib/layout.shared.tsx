@@ -3,6 +3,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
 export function baseOptions(): BaseLayoutProps {
   return {
+    i18n: false,
     nav: {
       enabled: false,
       url: '/docs/CompatibleList/solar-battery',

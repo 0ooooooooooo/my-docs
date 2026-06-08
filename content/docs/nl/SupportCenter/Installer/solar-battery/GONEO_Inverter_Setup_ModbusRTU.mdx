@@ -1,0 +1,52 @@
+---
+title: GONEO EUE2-PB/PDT Serie Omvormers Instellen
+description: Volg de onderstaande gestructureerde installatiestappen voor ModbusRTU seriële communicatie om ervoor te zorgen dat uw GONEO EUE2-PB/PDT serie omvormer naadloos kan worden geïntegreerd in het HEMS-systeem.
+---
+
+## 💡 Kernintegratiestappen
+
+### Stap 1 – Controleer de aansluitmethode en interfaceparameters van de omvormer
+De HEMS-controller communiceert met de GONEO EUE2-PB/PDT serie omvormer via **Modbus-RTU (RS485)**. Voordat u begint, moet u de fysieke RS485-communicatiepoorten op de omvormer identificeren en de standaard seriële verbindingsinstellingen controleren.
+
+Raadpleeg de *GONEO Omvormer Gebruikershandleiding* om de exacte pinnen voor RS485 A (+) en RS485 B (-) te bevestigen, evenals de fabrieksinstellingen voor communicatieparameters (Baudrate, Databits, Parity, Stopbits).
+
+### Stap 2 – Breng de fysieke en seriële verbinding tot stand
+1. Sluit de RS485-communicatiekabel van de HEMS-controller of RS485-naar-IP-gateway aan op de juiste RS485-klemmenblok in de bedradingsruimte van de GONEO-omvormer.
+2. Zorg ervoor dat de seriële communicatieketen correct wordt afgesloten (terminated) als dit het laatste apparaat op de bus is.
+3. Configureer het unieke Modbus Slave ID (Apparaatadres) rechtstreeks op het ingebouwde LCD-scherm van de omvormer of via de beheersoftware.
+
+### Stap 3 – Configureer interfaceparameters in de enjoyelec App
+Open de **enjoyelec App** om het subapparaat te koppelen en te configureren:
+1. Navigeer naar het **Subapparaatconfiguratie**-menu onder uw gekoppelde HEMS-controller.
+2. Selecteer het apparaattype als **Omvormer** en kies het profiel dat overeenkomt met **GONEO EUE2-PB/PDT Serie**.
+3. Vul de vereiste parameters in die exact overeenkomen met de instellingen van de omvormer:
+   - **Verbindingstype**: Modbus RTU (of Modbus TCP via gateway)
+   - **Slave ID / Apparaatadres**: *(bijv. 1, 2, of zoals geconfigureerd op de omvormer)*
+   - **Seriële poortparameters**: Baudrate (meestal 9600 of 115200), Parity en Stopbits.
+
+---
+
+## 📝 Configuratievoorbeeld
+
+Gebruikmakend van een typisch implementatiescenario voor de **GONEO EUE2-PB/PDT Serie** als voorbeeld:
+
+### Details fysieke aansluiting
+- **Fysieke interface**: Zoek het communicatieklemmenbord in het onderste onderhoudsdeksel van de omvormer.
+- **Pin-toewijzing**: Sluit de RS485-poort correct aan (A op A, B op B). Gebruik een afgeschermde getwiste kabel om elektromagnetische interferentie (EMI) van hoogspannings AC/DC-leidingen te verminderen.
+
+### Standaard communicatieparameters
+- **Protocol**: Modbus RTU
+- **Standaard baudrate**: `9600 bps` (of `115200 bps` afhankelijk van de firmwareversie)
+- **Databits**: `8`
+- **Parity**: `Geen`
+- **Stopbits**: `1`
+- **Standaard apparaatadres (Slave ID)**: `1`
+
+> 💡 **Tips:**
+> - Elk subapparaat dat op dezelfde RS485-bus is aangesloten, **moet een uniek Slave ID hebben** om communicatieconflicten te voorkomen.
+> - Noteer het toegewezen Slave ID en de seriële parameters voor invoer in de enjoyelec-applicatie.
+
+---
+
+## 🎉 Verificatie
+Nadat de app-configuraties zijn verzonden, zal de HEMS-controller gegevens van de GONEO-omvormer opvragen via het Modbus RTU-protocol. Real-time omvormerstatistieken — waaronder PV-vermogensoutput, netvoedingsstatus en apparaatfouten — worden automatisch gesynchroniseerd en weergegeven op het dashboard van de enjoyelec-app.

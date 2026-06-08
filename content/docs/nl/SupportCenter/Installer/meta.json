@@ -1,0 +1,11 @@
+{
+  "title": "Installateur",
+  "pages": [
+    "hems-controller",
+    "solar-battery",
+    "heat-pump",
+    "smart-meter",
+    "ev-charger",
+    "smart-home"
+  ]
+}

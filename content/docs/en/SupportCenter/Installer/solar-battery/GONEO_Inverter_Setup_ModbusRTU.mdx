@@ -1,0 +1,52 @@
+---
+title: GONEO EUE2-PB/PDT Series Inverters Setup
+description: To ensure that your GONEO EUE2-PB/PDT series inverter can be smoothly integrated into the HEMS system, please follow the structured setup steps outlined below for ModbusRTU serial communication.
+---
+
+## 💡 Core Integration Steps
+
+### Step 1 – Confirm the connection method and interface parameters of the inverter
+The HEMS Controller communicates with the GONEO EUE2-PB/PDT series inverter via **Modbus-RTU (RS485)**. Before proceeding, you need to identify the physical RS485 communication ports on the inverter and check its default serial connection settings.
+
+Please refer to the *GONEO Inverter User Manual* to confirm the exact pins for RS485 A (+) and RS485 B (-), as well as the factory default communication parameters (Baud rate, Data bits, Parity, Stop bits).
+
+### Step 2 – Establish the physical and serial connection
+1. Connect the RS485 communication cable from the HEMS Controller or RS485-to-IP gateway to the corresponding RS485 terminal block inside the GONEO inverter's wiring compartment.
+2. Ensure that the serial communication chain is properly terminated if it is the last device on the bus.
+3. Configure the unique Modbus Slave ID (Device Address) directly on the inverter's built-in LCD panel or management software.
+
+### Step 3 – Configure interface parameters in the enjoyelec App
+Open the **enjoyelec App** to pair and configure the sub-device:
+1. Navigate to the **Sub-device Configuration** menu under your bound HEMS Controller.
+2. Select the device type as **Inverter** and match the profile to **GONEO EUE2-PB/PDT Series**.
+3. Fill in the required parameters precisely matching the inverter's settings:
+   - **Connection Type**: Modbus RTU (or Modbus TCP via gateway)
+   - **Slave ID / Device Address**: *(e.g., 1, 2, or as configured on the inverter)*
+   - **Serial Port Parameters**: Baud Rate (typically 9600 or 115200), Parity, and Stop bits.
+
+---
+
+## 📝 Configuration Example
+
+Using a typical deployment scenario for the **GONEO EUE2-PB/PDT Series** as an example:
+
+### Hardware Connection Details
+- **Physical Interface**: Locate the communication terminal board inside the inverter lower maintenance cover.
+- **Pin Mapping**: Connect RS485 port correctly (A to A, B to B). Ensure a shielded twisted-pair cable is utilized to reduce electromagnetic interference (EMI) from high-voltage AC/DC lines.
+
+### Default Communication Parameters
+- **Protocol**: Modbus RTU
+- **Default Baud Rate**: `9600 bps` (or `115200 bps` depending on firmware version)
+- **Data Bits**: `8`
+- **Parity**: `None`
+- **Stop Bits**: `1`
+- **Default Device Address (Slave ID)**: `1`
+
+> 💡 **Tips:**
+> - Every sub-device connected to the same RS485 bus **must have a unique Slave ID** to prevent communication collisions.
+> - Record the assigned Slave ID and serial parameters for input into the enjoyelec application.
+
+---
+
+## 🎉 Verification
+Once the app configurations are submitted, the HEMS Controller will poll data from the GONEO inverter over the Modbus RTU protocol. Real-time inverter statistics—including PV power output, grid feed-in status, and device errors—will automatically sync and display on the enjoyelec app dashboard.

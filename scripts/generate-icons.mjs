@@ -2,19 +2,19 @@ import fs from 'fs';
 import path from 'path';
 
 const menuIconMap = {
-  'solarBattery': 'Solar&Battery',
-  'heatPump': 'Heat Pump',
-  'evCharger': 'EV charger',
-  'smartHome': 'Smart home',
-  'vehicle': 'Vehicle',
-  'hemsController': 'HEMS Controller',
-  'prices': 'Prices',
-  'general': 'General',
-  'energyDevice': 'Energy Device',
-  'automaticStrategy': 'Automatic Strategy',
-  'usageAnalysis': 'Usage Analysis',
-  'endUser': 'End User',
-  'installer': 'Installer',
+  'solarBattery': 'CompatibleList/solar-battery.mdx',
+  'heatPump': 'CompatibleList/heat-pump.mdx',
+  'evCharger': 'CompatibleList/ev-charger.mdx',
+  'smartHome': 'CompatibleList/smart-home.mdx',
+  'vehicle': 'CompatibleList/vehicle.mdx',
+  'hemsController': 'FAQ/hems-controller.mdx',
+  'prices': 'FAQ/prices.mdx',
+  'general': 'FAQ/general.mdx',
+  'energyDevice': 'FAQ/energy-device.mdx',
+  'automaticStrategy': 'FAQ/automatic-strategy.mdx',
+  'usageAnalysis': 'FAQ/usage-analysis.mdx',
+  'endUser': 'SupportCenter/EndUser',
+  'installer': 'SupportCenter/Installer',
 };
 
 const iconsDir = path.resolve('icons');
